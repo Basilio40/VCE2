@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+
+{% extends 'core/base.html' %}
+
+
+{% load static %}
+
+{% block main %}
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Log in (v2)</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+     <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    </head>
+    
+    <body class="hold-transition login-page bg-dark">
+
+{% load crispy_forms_tags %}
+
+    <div class="login-box bg-dark">
+    <!-- /.login-logo -->
+
+
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <img src="{% static 'core/dist/img/LOGO_VCE.png' %}" alt="AdminLTE logo" class="brand-image " style="opacity: .8 bg-transparent">
+        </div>
+        <div class="card-body " style="color: black;">
+        <p class="login-box-msg">Iniciar a sessão</p>
+<form action="http:/" method="post">
+
+{% csrf_token %}
+    
+{{ form | crispy }}
+
+       
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Lembre Me
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+      <br>
+
+      <p>Em caso de perda da senha direcione e-mail para:
+          <br> <b>vce@vcecontroles.com.br </b></p>
+      
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
+<!-- /.login-box -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Toastr -->
+    <script src="../../plugins/toastr/toastr.min.js"></script>
+
+
+    </body>
+    </html>
+
+{% endblock main %}
